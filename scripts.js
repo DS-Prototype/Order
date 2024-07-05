@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <option value="DS-3">DS-3</option>
             <option value="DS-3 Plus">DS-3 Plus</option>
             <option value="DS-3 OI">DS-3 OI</option>
+            console.log()
         `;
 
         // Create width input

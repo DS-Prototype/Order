@@ -13,8 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const typeDropdown = document.createElement('select');
         typeDropdown.classList.add('type-dropdown');
         typeDropdown.innerHTML = `
-            <option value="area">Area</option>
-            <option value="perimeter">Perimeter</option>
+            <option value="DS-1">DS-1</option>
+            <option value="DS-1 Pro">DS-1 Pro</option>
+            <option value="DS-1 Plus">DS-1 Plus</option>
+            <option value="DS-2">DS-2</option>
+            <option value="DS-2 Plus">DS-2 Plus</option>
+            <option value="DS-2 OI">DS-2 OI</option>
+            <option value="DS-3">DS-3</option>
+            <option value="DS-3 Plus">DS-3 Plus</option>
+            <option value="DS-3 OI">DS-3 OI</option>
         `;
 
         const widthInput = document.createElement('input');
@@ -53,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const unit = bubble.querySelector('.unit-dropdown').value;
 
             let result;
-            if (type === 'area') {
+            if (type === 'DS-1') {
                 result = width * length;
             } else if (type === 'perimeter') {
                 result = 2 * (width + length);

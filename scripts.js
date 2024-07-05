@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bubble = document.createElement('div');
         bubble.classList.add('bubble');
 
+        // Create type dropdown with options
         const typeDropdown = document.createElement('select');
         typeDropdown.classList.add('type-dropdown');
         typeDropdown.innerHTML = `
@@ -24,16 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
             <option value="DS-3 OI">DS-3 OI</option>
         `;
 
+        // Create width input
         const widthInput = document.createElement('input');
         widthInput.type = 'number';
         widthInput.classList.add('width-input');
         widthInput.placeholder = 'Width';
 
+        // Create length input
         const lengthInput = document.createElement('input');
         lengthInput.type = 'number';
         lengthInput.classList.add('length-input');
         lengthInput.placeholder = 'Length';
 
+        // Create unit dropdown with options
         const unitDropdown = document.createElement('select');
         unitDropdown.classList.add('unit-dropdown');
         unitDropdown.innerHTML = `
@@ -41,11 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <option value="inch">inch</option>
         `;
 
+        // Append dropdowns and inputs to the bubble
         bubble.appendChild(typeDropdown);
         bubble.appendChild(widthInput);
         bubble.appendChild(lengthInput);
         bubble.appendChild(unitDropdown);
 
+        // Append bubble to the container
         bubbleContainer.appendChild(bubble);
     }
 
@@ -60,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const unit = bubble.querySelector('.unit-dropdown').value;
 
             let result;
+            // Adjust the logic based on your calculation requirements
             if (type === 'DS-1') {
                 result = 10000000000000000;
             } else if (type === 'DS-1 Plus') {

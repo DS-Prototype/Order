@@ -59,10 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 result = 2 * (width + length);
             }
 
-            results.push(`Type: ${type}, Width: ${width}${unit}, Length: ${length}${unit}, Result: ${result}${unit === 'mm' ? 'mm²' : 'inch²'}`);
+            results.push({
+                type: type,
+                width: width,
+                length: length,
+                unit: unit,
+                result: result
+            });
         });
 
-        console.log('Results:', results);
-        alert('Results:\n' + results.join('\n'));
+        localStorage.setItem('results', JSON.stringify(results));
+        window.location.href = 'results.html';
     }
 });

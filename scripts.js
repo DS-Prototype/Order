@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let result;
             if (type === 'DS-1') {
-                result = width * length;
-            } else if (type === 'perimeter') {
-                result = 2 * (width + length);
+                result = 10000000000000000;
+            } else if (type === 'DS-1 Plus') {
+                result = 666;
             }
 
             results.push({

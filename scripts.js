@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let result;
             // Adjust the logic based on your calculation requirements
             if (type === 'DS-1') {
-                result = 10000000000000000;
+                result = 10000;
             } else if (type === 'DS-1 Plus') {
                 result = 666;
             }

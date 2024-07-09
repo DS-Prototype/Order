@@ -2,41 +2,73 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsContainer = document.getElementById('results-container');
     const backButton = document.getElementById('back-button');
 
+    // Retrieve results from localStorage
     const results = JSON.parse(localStorage.getItem('results')) || [];
     console.log('Retrieved results:', results);
 
+    // Function to create a grid for each result
     function createResultGrid(result) {
         const grid = document.createElement('div');
         grid.classList.add('result-grid');
 
-        const createGridItem = (label, value) => {
-            const labelDiv = document.createElement('div');
-            labelDiv.classList.add('grid-item');
-            labelDiv.textContent = label;
+        const typeLabel = document.createElement('div');
+        typeLabel.classList.add('grid-item');
+        typeLabel.textContent = 'Type:';
+        const typeValue = document.createElement('div');
+        typeValue.classList.add('grid-item');
+        typeValue.textContent = result.type;
 
-            const valueDiv = document.createElement('div');
-            valueDiv.classList.add('grid-item');
-            valueDiv.textContent = value;
+        const widthLabel = document.createElement('div');
+        widthLabel.classList.add('grid-item');
+        widthLabel.textContent = 'Width:';
+        const widthValue = document.createElement('div');
+        widthValue.classList.add('grid-item');
+        widthValue.textContent = result.width;
 
-            grid.appendChild(labelDiv);
-            grid.appendChild(valueDiv);
-        };
+        const lengthLabel = document.createElement('div');
+        lengthLabel.classList.add('grid-item');
+        lengthLabel.textContent = 'Length:';
+        const lengthValue = document.createElement('div');
+        lengthValue.classList.add('grid-item');
+        lengthValue.textContent = result.length;
 
-        createGridItem('Type:', result.type);
-        createGridItem('Width:', result.width);
-        createGridItem('Length:', result.length);
-        createGridItem('Unit:', result.unit);
-        createGridItem('Result:', result.result);
+        const unitLabel = document.createElement('div');
+        unitLabel.classList.add('grid-item');
+        unitLabel.textContent = 'Unit:';
+        const unitValue = document.createElement('div');
+        unitValue.classList.add('grid-item');
+        unitValue.textContent = result.unit;
+
+        const resultLabel = document.createElement('div');
+        resultLabel.classList.add('grid-item');
+        resultLabel.textContent = 'Result:';
+        const resultValue = document.createElement('div');
+        resultValue.classList.add('grid-item');
+        resultValue.textContent = result.result;
+
+        // Append labels and values to the grid
+        grid.appendChild(typeLabel);
+        grid.appendChild(typeValue);
+        grid.appendChild(widthLabel);
+        grid.appendChild(widthValue);
+        grid.appendChild(lengthLabel);
+        grid.appendChild(lengthValue);
+        grid.appendChild(unitLabel);
+        grid.appendChild(unitValue);
+        grid.appendChild(resultLabel);
+        grid.appendChild(resultValue);
 
         return grid;
     }
 
+    // Populate the container with result grids
     results.forEach(result => {
         const grid = createResultGrid(result);
         resultsContainer.appendChild(grid);
     });
 
+    // Back button functionality
     backButton.addEventListener('click', () => {
-        window.location.href = 'index.html';
+        window.location.href = 'index.html'; // Adjust path if needed
     });
 });

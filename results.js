@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Back button functionality
     backButton.addEventListener('click', () => {
-        window.location.href = 'index.html'; // Adjust path if needed
+        window.location.href = 'index.html'; // Ensure the path is correct
     });
 });
